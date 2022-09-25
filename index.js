@@ -1,21 +1,11 @@
-const puppeteer = require('puppeteer')
-const links = require('./links.json')
-const unibetFootball = require('./scrapers/unibet/football')
+const fs = require('fs')
+const parseLinks = require('./functions/parseLinks')
 
 const run = async () => {
-  // const browser = await puppeteer.launch({
-  //   headless: false
-  // })
+  fs.writeFileSync('matches.json', JSON.stringify([]))
 
-  // let page = await browser.newPage()
+  await parseLinks.parseFootball()
 
-
-  // await page.goto('https://www.unibet.com/betting/sports/filter/football/argentina/all/matches')
-  // await page.waitForSelector('ul', { timeout: 5_000 })
-
-  // await unibetFootball.footballScrape(page)
-
-  unibetFootball.footballScrape()
 
 }
 
