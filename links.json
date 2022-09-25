@@ -1,0 +1,14 @@
+[
+  {
+    "name": "unibet",
+    "api": true,
+    "sports": [
+      {
+        "name": "football",
+        "links": [
+          { "link": "https://www.unibet.com/betting/sports/filter/football/all/allGroups" }
+        ]
+      }
+    ]
+  }
+]
