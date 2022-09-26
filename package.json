@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2",
+    "difflib": "^0.2.4",
     "node-libcurl": "^2.3.4",
     "puppeteer": "^18.0.5"
   }

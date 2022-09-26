@@ -1,10 +1,9 @@
 const dataService = require('../../services/getData')
 
-const footballScraper = async (link, matches) => {
+const footballScraper = async (link, temp) => {
   try {
     const data = await dataService.getJsonData(link)
     const events = data.events
-    console.log(link)
 
     for (let i = 0; i < events.length; i++) {
       if (events[i].betOffers[0]) {
@@ -16,9 +15,8 @@ const footballScraper = async (link, matches) => {
           Odds_draw: (events[i].betOffers[0].outcomes[1].odds / 1000),
           Odds_win2: (events[i].betOffers[0].outcomes[2].odds / 1000),
           gameDate: events[i].event.start
-        }
-        
-        matches.push(obj)
+        }   
+        temp.push(obj)
       }
     }
   } catch (err) {
