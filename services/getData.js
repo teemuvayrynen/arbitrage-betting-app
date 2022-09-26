@@ -4,7 +4,8 @@ const { execSync } = require('child_process')
 
 
 const getJsonData = (link) => {
-  const output = execSync(`curl -v ${link}`)
+  console.log(link)
+  const output = execSync(`curl "${link}"`)
   const json = JSON.parse(output)
 
   return json

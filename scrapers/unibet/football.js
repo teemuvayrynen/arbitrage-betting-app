@@ -1,5 +1,4 @@
 const dataService = require('../../services/getData')
-const fs = require('fs')
 
 const footballScraper = async (link, matches) => {
   try {
@@ -25,7 +24,7 @@ const footballScraper = async (link, matches) => {
       }
     }
   } catch (err) {
-    console.log(err)
+    console.error(err)
   }
   
 }
