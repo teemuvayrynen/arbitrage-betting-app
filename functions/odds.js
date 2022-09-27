@@ -1,7 +1,6 @@
-const fs = require('fs')
+
 
 const calculate = (data) => {
-  let count = 0
 
   for (let i = 0; i < data.length; i++) {
     const event = data[i]
@@ -86,14 +85,12 @@ const calculate = (data) => {
             }
             console.log(obj)
           }
-          count += 6
         }
       }
     } else {
       oneItem(event[0])
     }
   }
-  console.log(count)
 }
 
 

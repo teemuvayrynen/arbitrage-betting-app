@@ -30,12 +30,7 @@ const create = () => {
     }
   }
 
-  fs.writeFileSync('result.json', JSON.stringify(matches))
-
   return matches
-
-
-  
 }
 
 

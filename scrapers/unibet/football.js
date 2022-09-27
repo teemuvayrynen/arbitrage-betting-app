@@ -11,7 +11,7 @@ const footballScraper = async (link, temp) => {
         for (let j = 0; j < events.length; j++) {
           if (events[j].mainBetOffer) {
             const obj = {
-              bookMaker: 'unibet',
+              bookmaker: 'unibet',
               Team1: events[j].mainBetOffer.outcomes[0].participant,
               Team2: events[j].mainBetOffer.outcomes[2].participant,
               Odds_win1: events[j].mainBetOffer.outcomes[0].oddsDecimal,
