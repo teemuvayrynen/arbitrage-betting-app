@@ -2,13 +2,32 @@ const fs = require('fs')
 const parseLinks = require('./functions/parseLinks')
 const message = require('./functions/message')
 require('dotenv').config()
+const TelegramBot = require('node-telegram-bot-api')
 
 const run = async () => {
-  //fs.writeFileSync('matches.json', JSON.stringify([]))
+  const bot = new TelegramBot(process.env.TELEGRAM_TOKEN, { polling: true })
+  
 
-  const data = await parseLinks.parseFootball()
+  //message.send(data)
 
-  message.send(data)
+  bot.on('message', (msg) => {
+  
+    bot.sendMessage(process.env.CHAT_ID, 'Received your message');
+  });
+
+
+  setInterval(() => {
+    (async () => {
+      fs.writeFileSync('matches.json', JSON.stringify([]))
+      const data = await parseLinks.parseFootball()
+
+      console.log(data)
+      
+
+    })()},60000)
+
+
+
 
 }
 
