@@ -21,7 +21,7 @@ const run = async () => {
       }
     });
 
-    bot.onText(/\/amount/, (msg, match) => {
+    bot.onText(/\/getamount/, (msg, match) => {
       bot.sendMessage(process.env.CHAT_ID, amount);
     });
 
