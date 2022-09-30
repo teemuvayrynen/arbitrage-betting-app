@@ -10,7 +10,7 @@ const run = async () => {
     const info = JSON.parse(fs.readFileSync('info.json'))
     let amount = info.amount
     
-    bot.onText(/\/amount (.+)/, (msg, match) => {
+    bot.onText(/\/bet (.+)/, (msg, match) => {
       const resp = match[1]
       if (isNaN(resp)) {
         bot.sendMessage(process.env.CHAT_ID, 'Send number')
@@ -21,7 +21,7 @@ const run = async () => {
       }
     });
 
-    bot.onText(/\/getamount/, (msg, match) => {
+    bot.onText(/\/getbet/, (msg, match) => {
       bot.sendMessage(process.env.CHAT_ID, amount);
     });
 
@@ -31,7 +31,7 @@ const run = async () => {
         fs.writeFileSync('matches.json', JSON.stringify([]))
         const data = await parseLinks.parseFootball()
         message.send(data, bot, amount)
-      })()},1800000)
+      })()},1200000)
 
   } catch (err) {
     bot.sendMessage(process.env.CHAT_ID, err.code)
