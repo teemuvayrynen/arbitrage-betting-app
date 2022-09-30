@@ -2,7 +2,7 @@ const dataService = require('../../services/getData')
 
 const footballScraper = async (link, temp) => {
   try {
-    const data = await dataService.getJsonData(link)
+    const data = await dataService.getJsonAxios(link)
     const events = data.events
 
     for (let i = 0; i < events.length; i++) {

@@ -40,6 +40,7 @@ const run = async () => {
   } catch (err) {
     bot.sendMessage(process.env.CHAT_ID, err.code)
   }
+
 }
 
 
