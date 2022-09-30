@@ -20,7 +20,7 @@ const create = () => {
             const team1 = new difflib.SequenceMatcher(null, event.Team1, event2.Team1)
             const team2 = new difflib.SequenceMatcher(null, event.Team2, event2.Team2)
   
-            if (team1.ratio() > 0.8 && team2.ratio() > 0.8) {
+            if (team1.ratio() > 0.95 && team2.ratio() > 0.95) {
               temp.push(event2)
               data[k].splice(n, 1)
               break

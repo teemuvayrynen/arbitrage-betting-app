@@ -6,29 +6,36 @@ const TelegramBot = require('node-telegram-bot-api')
 
 const run = async () => {
   const bot = new TelegramBot(process.env.TELEGRAM_TOKEN, { polling: true })
-  
+  try {
+    const info = JSON.parse(fs.readFileSync('info.json'))
+    let amount = info.amount
+    
+    bot.onText(/\/amount (.+)/, (msg, match) => {
+      const resp = match[1]
+      if (isNaN(resp)) {
+        bot.sendMessage(process.env.CHAT_ID, 'Send number')
+      } else {
+        amount = resp
+        fs.writeFileSync('info.json', JSON.stringify({...info, amount}))
+        bot.sendMessage(process.env.CHAT_ID, `Success`);
+      }
+    });
 
-  //message.send(data)
-
-  bot.on('message', (msg) => {
-  
-    bot.sendMessage(process.env.CHAT_ID, 'Received your message');
-  });
-
-
-  setInterval(() => {
-    (async () => {
-      fs.writeFileSync('matches.json', JSON.stringify([]))
-      const data = await parseLinks.parseFootball()
-
-      console.log(data)
-      
-
-    })()},60000)
-
+    bot.onText(/\/amount/, (msg, match) => {
+      bot.sendMessage(process.env.CHAT_ID, amount);
+    });
 
 
+    setInterval(() => {
+      (async () => {
+        fs.writeFileSync('matches.json', JSON.stringify([]))
+        const data = await parseLinks.parseFootball()
+        message.send(data, bot, amount)
+      })()},1800000)
 
+  } catch (err) {
+    bot.sendMessage(process.env.CHAT_ID, err.code)
+  }
 }
 
 

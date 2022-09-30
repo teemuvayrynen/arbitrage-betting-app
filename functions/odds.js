@@ -24,7 +24,11 @@ const calculate = (data) => {
             obj = {
               Match: `${event[j].Team1} vs ${event[j].Team2}`,
               Books: `${event[j].bookmaker} | ${event[j].bookmaker} | ${event[k].bookmaker}`,
-              Odds: `${win} | ${draw} | ${team2_win2}`,
+              Odds: {
+                win: win,
+                draw: draw,
+                win2: team2_win2
+              },
               Date: event[j].gameDate,
               Percent: percent
             }
@@ -37,7 +41,11 @@ const calculate = (data) => {
             obj = {
               Match: `${event[j].Team1} vs ${event[j].Team2}`,
               Books: `${event[j].bookmaker} | ${event[k].bookmaker} | ${event[j].bookmaker}`,
-              Odds: `${win} | ${team2_draw} | ${win2}`,
+              Odds: {
+                win: win,
+                draw: team2_draw,
+                win2: win2
+              },
               Date: event[j].gameDate,
               Percent: percent
             }
@@ -49,7 +57,11 @@ const calculate = (data) => {
             obj = {
               Match: `${event[j].Team1} vs ${event[j].Team2}`,
               Books: `${event[k].bookmaker} | ${event[j].bookmaker} | ${event[j].bookmaker}`,
-              Odds: `${team2_win} | ${draw} | ${win2}`,
+              Odds: {
+                win: team2_win,
+                draw: draw,
+                win2: win2
+              },
               Date: event[j].gameDate,
               Percent: percent
             }
@@ -61,7 +73,11 @@ const calculate = (data) => {
             obj = {
               Match: `${event[j].Team1} vs ${event[j].Team2}`,
               Books: `${event[k].bookmaker} | ${event[k].bookmaker} | ${event[j].bookmaker}`,
-              Odds: `${team2_win} | ${team2_draw} | ${win2}`,
+              Odds: {
+                win: team2_win,
+                draw: team2_draw,
+                win2: win2
+              },
               Date: event[j].gameDate,
               Percent: percent
             }
@@ -73,7 +89,11 @@ const calculate = (data) => {
             obj = {
               Match: `${event[j].Team1} vs ${event[j].Team2}`,
               Books: `${event[k].bookmaker} | ${event[j].bookmaker} | ${event[k].bookmaker}`,
-              Odds: `${team2_win} | ${draw} | ${team2_win2}`,
+              Odds: {
+                win: team2_win,
+                draw: draw,
+                win2: team2_win2
+              },
               Date: event[j].gameDate,
               Percent: percent
             }
@@ -85,7 +105,11 @@ const calculate = (data) => {
             obj = {
               Match: `${event[j].Team1} vs ${event[j].Team2}`,
               Books: `${event[j].bookmaker} | ${event[k].bookmaker} | ${event[k].bookmaker}`,
-              Odds: `${win} | ${team2_draw} | ${team2_win2}`,
+              Odds: {
+                win: win,
+                draw: team2_draw,
+                win2: team2_win2
+              },
               Date: event[j].gameDate,
               Percent: percent
             }
@@ -124,6 +148,15 @@ const oneItem = (event, calculatedOdds) => {
   }
 }
 
+const calculateProfit = (amount, odds, percent) => {
+  const win = amount / (percent * odds.win)
+  const draw = amount / (percent * odds.draw)
+  const win2 = amount / (percent * odds.win2)
+
+  return `${win.toFixed(1)} | ${draw.toFixed(1)} | ${win2.toFixed(1)}`
+}
+
 module.exports = {
-  calculate
+  calculate,
+  calculateProfit
 }
