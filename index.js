@@ -25,6 +25,9 @@ const run = async () => {
       bot.sendMessage(process.env.CHAT_ID, amount);
     });
 
+    fs.writeFileSync('matches.json', JSON.stringify([]))
+    const data = await parseLinks.parseFootball()
+    message.send(data, bot, amount)
 
     setInterval(() => {
       (async () => {
@@ -32,6 +35,7 @@ const run = async () => {
         const data = await parseLinks.parseFootball()
         message.send(data, bot, amount)
       })()},1200000)
+    
 
   } catch (err) {
     bot.sendMessage(process.env.CHAT_ID, err.code)
