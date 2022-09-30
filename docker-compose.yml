@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  server:
+    image: betapp
+    build:
+      context: ./
+    environment:
+      - TELEGRAM_TOKEN=5580771563:AAEaVEYYh1WAXu3ZTBKAvTkHExkbPSzgDeI
+      - CHAT_ID=1343771612
+    container_name: betapp
