@@ -12,7 +12,7 @@ const create = () => {
       const event = bookmaker[j]
       temp = []
 
-      if (i < data.length - 1) {
+      if (i < data.length - 1 && data.length > 1) {
         for (let k = i + 1; k < data.length; k++) {
           for (let n = 0; n < data[k].length; n++) {
             const event2 = data[k][n]
@@ -34,6 +34,7 @@ const create = () => {
     }
   }
 
+  console.log('Subarrays done')
   return matches
 }
 

@@ -4,6 +4,7 @@ const message = require('./functions/message')
 require('dotenv').config()
 const TelegramBot = require('node-telegram-bot-api')
 
+
 const run = async () => {
   const bot = new TelegramBot(process.env.TELEGRAM_TOKEN, { polling: true })
   try {
@@ -34,7 +35,7 @@ const run = async () => {
         fs.writeFileSync('matches.json', JSON.stringify([]))
         const data = await parseLinks.parseFootball()
         message.send(data, bot, amount)
-      })()},1200000)
+      })()},1800000)
     
 
   } catch (err) {
@@ -42,7 +43,6 @@ const run = async () => {
   }
 
 }
-
 
 
 run()

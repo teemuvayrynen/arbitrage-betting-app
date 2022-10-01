@@ -101,5 +101,12 @@
       { "link": "https://eu-offering.kambicdn.org/offering/v2018/paf/listView/football/uruguay/all/all/matches.json?lang=en_GB&market=FI" },
       { "link": "https://eu-offering.kambicdn.org/offering/v2018/paf/listView/football/usa/all/all/matches.json?lang=en_GB&market=FI" }
     ]
+  },
+  {
+    "name": "virginbet",
+    "links": [{
+      "categories": "https://gateway.virginbet.com/sportsbook/gateway/v1/view/sport/competitions?interval=ALL&sportcategoryid=SBTC1_1",
+      "base_url": "https://gateway.virginbet.com/sportsbook/gateway/v1/view/events/matches?interval=ALL"
+    }]
   }
 ]

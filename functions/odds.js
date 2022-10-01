@@ -122,6 +122,8 @@ const calculate = (data) => {
     }
   }
 
+  console.log('Calculation done')
+
   return calculatedOdds
 }
 
