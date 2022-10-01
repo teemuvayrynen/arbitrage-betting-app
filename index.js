@@ -44,5 +44,13 @@ const run = async () => {
 
 }
 
-
 run()
+
+// const service = require('./services/getData')
+
+// const test = async () => {
+//   const resp = await service.getJsonAxios('https://sb2frontend-altenar2.biahosted.com/api/Sportsbook/GetEvents?timezoneOffset=-180&langId=63&skinName=sportaza&configId=26&culture=fi-FI&countryCode=FI&deviceType=Desktop&numformat=en&integration=sportaza&sportids=0&categoryids=0&champids=2941%2C3111%2C3049%2C2973%2C3763%2C3322%2C32613%2C34871%2C3390%2C3433%2C3361%2C3316%2C3484%2C3317%2C3434%2C3431%2C3318%2C3520%2C3432%2C3430&group=AllEvents&period=periodall&withLive=false&outrightsDisplay=none&marketTypeIds=&couponType=0&startDate=2022-10-01T17%3A41%3A00.000Z&endDate=2022-10-08T17%3A41%3A00.000Z')
+//   console.log(resp)
+// }
+
+// test()

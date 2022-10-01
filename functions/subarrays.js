@@ -34,6 +34,8 @@ const create = () => {
     }
   }
 
+  fs.writeFileSync('result.json', JSON.stringify(matches))
+
   console.log('Subarrays done')
   return matches
 }
