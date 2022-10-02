@@ -1,7 +1,7 @@
 const fs = require('fs')
 const scraperPaf = require('../scrapers/paf/football')
 const scraperSportaza = require('../scrapers/sportaza/football')
-const scraperVirginbet = require('../scrapers/virginbet/football')
+const scraperIgubet = require('../scrapers/igubet/football')
 const subarrays = require('./subarrays')
 const odds = require('./odds')
 
@@ -21,6 +21,8 @@ const parseFootball = async () => {
           await scraperPaf.footballScraper(link.link, temp)
         } else if (bookmaker.name == 'sportaza') {
           await scraperSportaza.footballScraper(link.link, temp)
+        } else if (bookmaker.name == 'igubet') {
+          await scraperIgubet.footballScraper(link.link, temp)
         }
       }
       matches.push(temp)
