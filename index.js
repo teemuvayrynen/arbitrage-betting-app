@@ -45,12 +45,3 @@ const run = async () => {
 }
 
 run()
-
-const service = require('./services/getData')
-
-const test = async () => {
-  const resp = await service.getJsonAxios('https://igubet.com/api/v2/matches?bettable=true&limit=500&match_status=0&sort_by=tournament.priority%3Aasc&sort_by=tournament.id%3Aasc&sort_by=start_time%3Aasc&sort_by=bets_count%3Adesc&tournament_id=1356&type=match')
-  console.log(resp)
-}
-
-//test()

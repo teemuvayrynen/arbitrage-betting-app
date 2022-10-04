@@ -2,7 +2,6 @@ const dataService = require('../../services/getData')
 
 const footballScraper = async (link, temp) => {
   try {
-    console.log(link)
     const resp = await dataService.getJsonAxios(link)
     
     if (resp.Result.Items.length > 0) {
@@ -31,6 +30,7 @@ const footballScraper = async (link, temp) => {
 
 
   } catch (err) {
+    console.log(err)
     await footballScraper(link, temp)
   }
 }
