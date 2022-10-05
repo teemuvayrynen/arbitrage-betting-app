@@ -3,6 +3,7 @@ const parseLinks = require('./functions/parseLinks')
 const message = require('./functions/message')
 require('dotenv').config()
 const TelegramBot = require('node-telegram-bot-api')
+const scraper = require('./scrapers/20bet/football')
 
 
 const run = async () => {

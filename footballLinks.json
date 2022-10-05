@@ -286,5 +286,13 @@
       { "link": "https://igubet.com/api/v2/matches?bettable=true&limit=100&match_status=0&sort_by=tournament.priority%3Aasc&sort_by=tournament.id%3Aasc&sort_by=start_time%3Aasc&sort_by=bets_count%3Adesc&tournament_id=2075&type=match" },
       { "link": "https://igubet.com/api/v2/matches?bettable=true&limit=100&match_status=0&sort_by=tournament.priority%3Aasc&sort_by=tournament.id%3Aasc&sort_by=start_time%3Aasc&sort_by=bets_count%3Adesc&tournament_id=946&type=match" }
     ]
+  },
+  {
+    "name": "20bet",
+    "links": [{
+      "leagues": "https://platform.20bet.com/api/v3/menu/line/en?period=0",
+      "base_url": "https://platform.20bet.com/api/event/list?competitor1Id_neq=&competitor2Id_neq=&status_in%5B%5D=0&limit=150&main=1&relations%5B%5D=odds&relations%5B%5D=league&relations%5B%5D=result&relations%5B%5D=competitors&relations%5B%5D=withMarketsCount&relations%5B%5D=players&relations%5B%5D=sportCategories&relations%5B%5D=broadcasts&relations%5B%5D=statistics&relations%5B%5D=additionalInfo&relations%5B%5D=tips&leagueId_in%5B%5D=",
+      "base_url2": "&oddsExists_eq=1&lang=en"
+    }]
   }
 ]
