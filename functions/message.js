@@ -7,7 +7,7 @@ const send = async (data, bot, amount) => {
         var today = new Date()
         var eventDate = new Date(data[i].Date)
 
-        if (eventDate > today) {
+        if (eventDate > today && data[i].Percent * 100 <= 10) {
           const stakes = odds.calculateProfit(amount, data[i].Odds, data[i].Percent)
   
           const message = `
