@@ -24,7 +24,6 @@ const footballScraper = async (link, temp) => {
     }
   } catch (err) {
     console.log(err)
-    await footballScraper(link, temp)
   }
 
 }
