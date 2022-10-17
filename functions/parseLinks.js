@@ -18,11 +18,11 @@ const parseFootball = async () => {
       for (let j = 0; j < bookmaker.links.length; j++) {
         const link = bookmaker.links[j]
         if  (bookmaker.name == 'unibet') {
-          await scraperUnibet.footballScraper(link.link, temp)
+          //await scraperUnibet.footballScraper(link.link, temp)
         } else if (bookmaker.name == 'paf') {
-          await scraperPaf.footballScraper(link.link, temp)
+          //await scraperPaf.footballScraper(link.link, temp)
         } else if (bookmaker.name == 'sportaza') {
-          await scraperSportaza.footballScraper(link.link, temp)
+          //await scraperSportaza.footballScraper(link.link, temp)
         } else if (bookmaker.name == 'igubet') {
           await scraperIgubet.footballScraper(link.link, temp)
         } else if (bookmaker.name == '20bet') {

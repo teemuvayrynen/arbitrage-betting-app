@@ -8,7 +8,7 @@ const footballScraper = async (link, temp) => {
     if (events.length > 0) {
       for (let i = 0; i < events.length; i++) {
         const event = events[i]
-        if (event.main_market.outcomes.length == 3) {
+        if (event.main_market && event.main_market.outcomes.length == 3) {
           const obj = {
             bookmaker: 'igubet',
             Team1: event.main_market.outcomes[0].name,
